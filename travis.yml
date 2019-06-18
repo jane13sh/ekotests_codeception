@@ -11,6 +11,6 @@ before_install:
   - export PATH=/c/tools/php56/ssleay32.dll:$PATH
   - export PATH=/c/tools/php56/libssh2.dll:$PATH
   - bash -c 'echo ${LICENSE}'>>lic.txt
-  - travis_wait 15 php github.php
+  - travis_wait 15 php github.php 
 script:
   - travis_wait 35 php codecept.phar run functional -d
