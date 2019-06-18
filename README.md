@@ -20,5 +20,4 @@ script:
   - php codecept.phar run acceptance -d  - запуск тестов (подробнее о командах  https://codeception.com/docs/reference/Commands) 
   - php report.php - складывание на яндекс диск скриншотов с ошибками (всех файлов из директории _output) (только для UI тестов)
   
-Описание фреймворка здесь https://eko-point.atlassian.net/wiki/spaces/SPC/pages/460816385/Codeception
-При скачивании проекта с git необходимо будет только установить java, php и  прописать path. релиз устанавливать в папку release в той же директории, где находится файл codecept.phar
+
