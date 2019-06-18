@@ -1,0 +1,35 @@
+# Codeception Test Suite Configuration
+#
+# Suite for acceptance tests.
+# Perform tests in browser using the WebDriver or PhpBrowser.
+# If you need both WebDriver and PHPBrowser tests - create a separate suite.
+
+actor: AcceptanceTester
+modules:
+  enabled:
+  - WebDriver
+  - \Helper\Acceptance
+  - Asserts
+  - \Helper\Common
+  - Db:
+      dbtype: Sqlite
+      #dsn: sqlite:tests\998\feeding-farm-datastore\sqlite.db
+      dsn: sqlite:release\feeding-farm-datastore\sqlite.db
+      user: ''
+      password: ''
+      dump: tests/_data/dump_sqlite.db
+      #populate: false
+      #populator: '..\..\releases\1029\feeding-farm-datastore\sqlite.db < tests/_data/dump_sqlite.db'
+      #cleanup: true
+      reconnect: true
+  config:
+    WebDriver:
+       url: http://localhost:3000
+       browser: chrome
+       window_size: maximize
+    Helper\Common:
+        dsn: sqlite:..\release\feeding-farm-datastore\sqlite.db
+        user: ''
+        password: ''
+
+
