@@ -20,22 +20,22 @@
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
         //$info = curl_getinfo($ch);
         $result = curl_exec($ch);
-        //echo  curl_error($ch);
+        echo  curl_error($ch);
         $r =  json_decode($result, true);
-        //print_r($result[1]);
-        //print_r($r[0]['assets'][0]['url']);
+        print_r($result[1]);
+        print_r($r[0]['assets'][0]['url']);
         $url = ($r[0]['assets'][0]['url']);
         $name = ($r[0]['assets'][0]['name']);
         curl_close($ch);
-        ////var_dump($url);
-        //var_dump($name);
+       var_dump($url);
+       var_dump($name);
         // выборка релизов с тегом develop
 
         foreach ($r as $release => $info) {
             foreach ($info['assets'] as $in) {
                 if(stristr($in['name'], 'feeding-develop')){
                     $res[] = array($in['name'] => $in['url']);
-                    //echo  $in['name'];
+                    echo  $in['name'];
                 } 
             };
         };
